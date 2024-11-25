@@ -31,12 +31,16 @@ internal class Program
         screenshot.SaveAsFile("abc.png");
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         IWebElement password = driver.FindElement(By.Id("i0118"));
-        password.SendKeys("Kjimenez0920!");
+        screenshot = screenshotdriver.GetScreenshot();
+        password.SendKeys("Kjimenez0920!");       
         password.Submit();
+        screenshot.SaveAsFile("def.png");
 
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
         IWebElement btnsearch = driver.FindElement(By.Id("idBtn_Back"));
         btnsearch.Click();
+         screenshot = screenshotdriver.GetScreenshot();
+        screenshot.SaveAsFile("ghi.png");
 
         //Buscar por nombre de correo
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
@@ -44,6 +48,8 @@ internal class Program
         btnbuscar.Click();
         btnbuscar.SendKeys("ITLA");
         driver.FindElement(By.Id("topSearchInput")).SendKeys(Keys.Enter);
+        screenshot = screenshotdriver.GetScreenshot();
+        screenshot.SaveAsFile("jkl.png");
 
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         IWebElement btnhelp2 = driver.FindElement(By.Id("id__819"));
